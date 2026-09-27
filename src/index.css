@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+:root {
+  font-family: "Quicksand", sans-serif;
+  color: #70564c;
+  background: #fffbf2;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.story-title {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.romantic-bg {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 221, 210, 0.8), transparent 30%),
+    radial-gradient(circle at 90% 80%, rgba(232, 221, 245, 0.7), transparent 30%),
+    linear-gradient(135deg, #fffbf2, #fceee0);
+}
+
+.paper {
+  background: #fffaf1;
+  box-shadow: 0 24px 65px rgba(112, 86, 76, 0.14);
+}
+
+.polaroid {
+  background: #fffefa;
+  box-shadow: 0 14px 30px rgba(112, 86, 76, 0.16);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
