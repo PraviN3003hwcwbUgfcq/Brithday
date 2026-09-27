@@ -383,15 +383,74 @@ function Entrance({ next }) {
 
 /* PAGE 2 */
 
-function Welcome({
-  next,
-}) {
+// function Welcome({
+//   next,
+// }) {
+//   return (
+//     <Scene>
+//       <div className="w-full text-center">
+//         <Characters scene="welcome" />
+
+//         <p className="mt-7 text-xs font-bold uppercase tracking-[0.35em] text-[#E29578]">
+//           Chapter One
+//         </p>
+
+//         <motion.h1
+//           initial={{
+//             opacity: 0,
+//             y: 20,
+//           }}
+//           animate={{
+//             opacity: 1,
+//             y: 0,
+//           }}
+//           className="story-title mt-2 text-5xl font-semibold sm:text-7xl"
+//         >
+//           From Me to You.
+//         </motion.h1>
+
+//         <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#70564C]/65 sm:text-base">
+//           A tiny digital
+//           world made with
+//           love, memories and
+//           a little bit of
+//           magic.
+//         </p>
+
+//         <div className="my-7 text-[#E29578]">
+//           ───── ✿ ♥ ✿ ─────
+//         </div>
+
+//         <PrimaryButton
+//           onClick={next}
+//         >
+//           Begin Our Journey
+
+//           <ArrowRight
+//             size={17}
+//           />
+//         </PrimaryButton>
+//       </div>
+//     </Scene>
+//   );
+// }
+
+function Welcome({ next }) {
   return (
     <Scene>
       <div className="w-full text-center">
-        <Characters scene="welcome" />
+        {/* Add your couple image here:
+            public/images/couple-journey.jpg
+        */}
+        <div className="mx-auto mb-6 h-64 w-64 overflow-hidden rounded-[2rem] shadow-xl sm:h-80 sm:w-80">
+          <img
+            src="/images/couple-journey.jpg"
+            alt="Our Journey"
+            className="h-full w-full object-cover"
+          />
+        </div>
 
-        <p className="mt-7 text-xs font-bold uppercase tracking-[0.35em] text-[#E29578]">
+        <p className="mt-3 text-xs font-bold uppercase tracking-[0.35em] text-[#E29578]">
           Chapter One
         </p>
 
@@ -404,138 +463,380 @@ function Welcome({
             opacity: 1,
             y: 0,
           }}
+          transition={{
+            duration: 0.8,
+          }}
           className="story-title mt-2 text-5xl font-semibold sm:text-7xl"
         >
           From Me to You.
         </motion.h1>
 
-        <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#70564C]/65 sm:text-base">
-          A tiny digital
-          world made with
-          love, memories and
-          a little bit of
-          magic.
-        </p>
-
-        <div className="my-7 text-[#E29578]">
-          ───── ✿ ♥ ✿ ─────
-        </div>
-
-        <PrimaryButton
-          onClick={next}
+        <motion.p
+          initial={{
+            opacity: 0,
+            y: 15,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+          }}
+          className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#70564C]/65 sm:text-base"
         >
-          Begin Our Journey
+          Just a little place where our memories, silly moments, and love come together.
+        </motion.p>
 
-          <ArrowRight
-            size={17}
-          />
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0.8,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.4,
+          }}
+          className="my-7 text-[#E29578]"
+        >
+          ───── ✿ ♥ ✿ ─────
+        </motion.div>
+
+        <PrimaryButton onClick={next}>
+          Begin Our Journey
+          <ArrowRight size={17} />
         </PrimaryButton>
       </div>
     </Scene>
   );
 }
 
+
+
+
 /* PAGE 3 */
 
+// function Letter() {
+//   const [
+//     opened,
+//     setOpened,
+//   ] = useState(false);
+
+//   return (
+//     <Scene>
+//       <div className="w-full max-w-3xl text-center">
+//         <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#E29578]">
+//           A little note
+//         </p>
+
+//         <h2 className="story-title mt-2 text-4xl font-semibold sm:text-6xl">
+//           Something I wanted
+//           to say…
+//         </h2>
+
+//         <motion.button
+//           onClick={() =>
+//             setOpened(true)
+//           }
+//           whileHover={{
+//             y: -5,
+//           }}
+//           className="paper mt-8 w-full rounded-[2rem] border border-white p-6 sm:p-12"
+//         >
+//           {!opened ? (
+//             <div className="flex min-h-72 flex-col items-center justify-center">
+//               <div className="text-7xl">
+//                 💌
+//               </div>
+
+//               <p className="mt-5 font-bold">
+//                 Tap the envelope
+//                 to open
+//               </p>
+
+//               <p className="mt-2 text-xs opacity-50">
+//                 There may be
+//                 feelings inside.
+//               </p>
+//             </div>
+//           ) : (
+//             <motion.div
+//               initial={{
+//                 opacity: 0,
+//                 y: 40,
+//               }}
+//               animate={{
+//                 opacity: 1,
+//                 y: 0,
+//               }}
+//             >
+//               <div className="mb-5 text-3xl text-[#E29578]">
+//                 ❦
+//               </div>
+
+//               <p className="story-title text-3xl leading-tight sm:text-5xl">
+//                 “In your
+
+//                 <span className="text-[#E29578]">
+//                   {" "}
+//                   smile
+//                 </span>
+
+//                 , I found my
+//                 peace.
+
+//                 <br />
+
+//                 In your
+
+//                 <span className="text-[#E29578]">
+//                   {" "}
+//                   love
+//                 </span>
+
+//                 , I found my
+//                 home.”
+//               </p>
+
+//               <p className="mx-auto mt-7 max-w-xl text-sm leading-7 opacity-65 sm:text-base">
+//                 You have a way
+//                 of making
+//                 ordinary days
+//                 softer, happier
+//                 and worth
+//                 remembering.
+//                 This little
+//                 story is only a
+//                 tiny reminder
+//                 of how special
+//                 you are.
+//               </p>
+
+//               <p className="mt-7 font-semibold">
+//                 — with love ♡
+//               </p>
+//             </motion.div>
+//           )}
+//         </motion.button>
+//       </div>
+//     </Scene>
+//   );
+// }
+
+
 function Letter() {
-  const [
-    opened,
-    setOpened,
-  ] = useState(false);
+  const [opened, setOpened] = useState(false);
 
   return (
     <Scene>
       <div className="w-full max-w-3xl text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#E29578]">
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-xs font-bold uppercase tracking-[0.3em] text-[#E29578]"
+        >
           A little note
-        </p>
+        </motion.p>
 
-        <h2 className="story-title mt-2 text-4xl font-semibold sm:text-6xl">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+          className="story-title mt-2 text-4xl font-semibold sm:text-6xl"
+        >
           Something I wanted
+          <br />
           to say…
-        </h2>
+        </motion.h2>
 
         <motion.button
-          onClick={() =>
-            setOpened(true)
-          }
-          whileHover={{
-            y: -5,
-          }}
-          className="paper mt-8 w-full rounded-[2rem] border border-white p-6 sm:p-12"
+          onClick={() => setOpened(true)}
+          whileHover={!opened ? { y: -8, scale: 1.02 } : {}}
+          whileTap={!opened ? { scale: 0.98 } : {}}
+          className="paper relative mt-8 w-full overflow-hidden rounded-[2rem] border border-white p-6 shadow-xl sm:p-12"
         >
           {!opened ? (
             <div className="flex min-h-72 flex-col items-center justify-center">
-              <div className="text-7xl">
+              {/* Floating hearts */}
+              <motion.div
+                animate={{
+                  y: [0, -12, 0],
+                  rotate: [-3, 3, -3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="mb-2 text-7xl"
+              >
                 💌
-              </div>
+              </motion.div>
 
-              <p className="mt-5 font-bold">
-                Tap the envelope
-                to open
-              </p>
+              <motion.div
+                animate={{
+                  scale: [1, 1.15, 1],
+                  opacity: [0.5, 1, 0.5],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+                className="absolute right-[25%] top-[25%] text-xl"
+              >
+                ♡
+              </motion.div>
+
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                  opacity: [0.3, 1, 0.3],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  delay: 0.5,
+                }}
+                className="absolute left-[25%] top-[35%] text-lg"
+              >
+                ✦
+              </motion.div>
+
+              <motion.p
+                animate={{
+                  opacity: [0.6, 1, 0.6],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+                className="mt-5 font-bold"
+              >
+                Tap the envelope to open
+              </motion.p>
 
               <p className="mt-2 text-xs opacity-50">
-                There may be
-                feelings inside.
+                There may be feelings inside…
               </p>
             </div>
           ) : (
             <motion.div
-              initial={{
-                opacity: 0,
-                y: 40,
+              initial={{ opacity: 0, scale: 0.85, y: 60 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{
+                duration: 0.9,
+                ease: [0.22, 1, 0.36, 1],
               }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
+              className="relative"
             >
-              <div className="mb-5 text-3xl text-[#E29578]">
+              {/* Romantic floating hearts */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{
+                  opacity: [0, 1, 0],
+                  y: -100,
+                  x: -30,
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: 0.3,
+                }}
+                className="pointer-events-none absolute left-[20%] top-10 text-2xl text-[#E29578]"
+              >
+                ♡
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{
+                  opacity: [0, 1, 0],
+                  y: -120,
+                  x: 30,
+                }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  delay: 0.8,
+                }}
+                className="pointer-events-none absolute right-[20%] top-10 text-xl text-[#E29578]"
+              >
+                ♥
+              </motion.div>
+
+              <motion.div
+                initial={{ scale: 0, rotate: -20 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{
+                  delay: 0.35,
+                  duration: 0.6,
+                  type: "spring",
+                }}
+                className="mb-5 text-4xl text-[#E29578]"
+              >
                 ❦
-              </div>
+              </motion.div>
 
-              <p className="story-title text-3xl leading-tight sm:text-5xl">
-                “In your
-
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.7 }}
+                className="story-title text-3xl leading-tight sm:text-5xl"
+              >
+                “In your{" "}
                 <span className="text-[#E29578]">
-                  {" "}
                   smile
                 </span>
-
-                , I found my
-                peace.
-
+                , I found my peace.
                 <br />
-
-                In your
-
+                In your{" "}
                 <span className="text-[#E29578]">
-                  {" "}
                   love
                 </span>
+                , I found my home.”
+              </motion.p>
 
-                , I found my
-                home.”
-              </p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.7 }}
+                className="mx-auto mt-7 max-w-xl text-sm leading-7 opacity-65 sm:text-base"
+              >
+                You have a way of making ordinary days
+                softer, happier and worth remembering.
+                This little story is only a tiny reminder
+                of how special you are.
+              </motion.p>
 
-              <p className="mx-auto mt-7 max-w-xl text-sm leading-7 opacity-65 sm:text-base">
-                You have a way
-                of making
-                ordinary days
-                softer, happier
-                and worth
-                remembering.
-                This little
-                story is only a
-                tiny reminder
-                of how special
-                you are.
-              </p>
-
-              <p className="mt-7 font-semibold">
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
+                className="mt-7 font-semibold"
+              >
                 — with love ♡
-              </p>
+              </motion.p>
+
+              {/* Bottom heart pulse */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  delay: 1.5,
+                  duration: 1.2,
+                  repeat: Infinity,
+                }}
+                className="mt-6 text-xl text-[#E29578]"
+              >
+                ♥
+              </motion.div>
             </motion.div>
           )}
         </motion.button>
@@ -836,126 +1137,392 @@ function Gallery() {
 
 /* PAGE 6 */
 
-function Reasons() {
-  const [
-    opened,
-    setOpened,
-  ] = useState([]);
+// function Reasons() {
+//   const [
+//     opened,
+//     setOpened,
+//   ] = useState([]);
 
-  const openReason =
-    index => {
-      if (
-        !opened.includes(
-          index
-        )
-      ) {
-        setOpened([
-          ...opened,
-          index,
-        ]);
-      }
-    };
+//   const openReason =
+//     index => {
+//       if (
+//         !opened.includes(
+//           index
+//         )
+//       ) {
+//         setOpened([
+//           ...opened,
+//           index,
+//         ]);
+//       }
+//     };
+
+//   return (
+//     <Scene>
+//       <div className="w-full max-w-5xl text-center">
+//         <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#E29578]">
+//           Tiny surprises
+//         </p>
+
+//         <h2 className="story-title mt-2 text-4xl font-semibold sm:text-6xl">
+//           A Few Reasons… Out
+//           of Millions ♥
+//         </h2>
+
+//         <p className="mt-3 text-xs opacity-50">
+//           {opened.length}{" "}
+//           little surprises
+//           opened
+//         </p>
+
+//         <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5">
+//           {reasons.map(
+//             (
+//               reason,
+//               index
+//             ) => {
+//               const isOpen =
+//                 opened.includes(
+//                   index
+//                 );
+
+//               return (
+//                 <motion.button
+//                   key={
+//                     reason
+//                   }
+//                   onClick={() =>
+//                     openReason(
+//                       index
+//                     )
+//                   }
+//                   whileHover={{
+//                     y: -5,
+//                     rotate:
+//                       index %
+//                       2
+//                         ? 1
+//                         : -1,
+//                   }}
+//                   whileTap={{
+//                     scale: 0.95,
+//                   }}
+//                   className={`min-h-40 rounded-[2rem] border p-5 sm:min-h-48 ${
+//                     isOpen
+//                       ? "border-white bg-white/70"
+//                       : "border-white/70 bg-[#FFDDD2]/60"
+//                   }`}
+//                 >
+//                   {!isOpen ? (
+//                     <>
+//                       <Gift
+//                         size={
+//                           36
+//                         }
+//                         className="mx-auto text-[#E29578]"
+//                       />
+
+//                       <p className="mt-4 text-xs font-bold uppercase tracking-widest">
+//                         Open me
+//                       </p>
+//                     </>
+//                   ) : (
+//                     <motion.div
+//                       initial={{
+//                         opacity: 0,
+//                         scale: 0.8,
+//                       }}
+//                       animate={{
+//                         opacity: 1,
+//                         scale: 1,
+//                       }}
+//                     >
+//                       <Sparkles className="mx-auto text-[#E29578]" />
+
+//                       <p className="mt-3 text-xs font-bold uppercase tracking-widest text-[#E29578]">
+//                         Reason #
+//                         {index +
+//                           1}
+//                       </p>
+
+//                       <p className="mt-3 text-sm font-semibold leading-6">
+//                         {
+//                           reason
+//                         }
+//                       </p>
+//                     </motion.div>
+//                   )}
+//                 </motion.button>
+//               );
+//             }
+//           )}
+//         </div>
+//       </div>
+//     </Scene>
+//   );
+// }
+
+
+function Reasons() {
+  const [opened, setOpened] = useState([]);
+
+  const openReason = (index) => {
+    if (!opened.includes(index)) {
+      setOpened([...opened, index]);
+    }
+  };
+
+  const emojis = ["💌", "🌸", "✨", "🫶", "🌙", "💗"];
 
   return (
     <Scene>
       <div className="w-full max-w-5xl text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#E29578]">
-          Tiny surprises
-        </p>
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-xs font-bold uppercase tracking-[0.3em] text-[#E29578]"
+        >
+          Little things I love
+        </motion.p>
 
-        <h2 className="story-title mt-2 text-4xl font-semibold sm:text-6xl">
-          A Few Reasons… Out
-          of Millions ♥
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.7 }}
+          className="story-title mt-2 text-4xl font-semibold sm:text-6xl"
+        >
+          There are so many
+          <br />
+          reasons I love you ♥
+        </motion.h2>
 
-        <p className="mt-3 text-xs opacity-50">
-          {opened.length}{" "}
-          little surprises
-          opened
-        </p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="mt-4 text-xs opacity-50"
+        >
+          Open each little memory
+        </motion.p>
 
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5">
-          {reasons.map(
-            (
-              reason,
-              index
-            ) => {
-              const isOpen =
-                opened.includes(
-                  index
-                );
+        <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 sm:gap-8">
+          {reasons.map((reason, index) => {
+            const isOpen = opened.includes(index);
 
-              return (
-                <motion.button
-                  key={
-                    reason
-                  }
-                  onClick={() =>
-                    openReason(
-                      index
-                    )
-                  }
-                  whileHover={{
-                    y: -5,
-                    rotate:
-                      index %
-                      2
-                        ? 1
-                        : -1,
-                  }}
-                  whileTap={{
-                    scale: 0.95,
-                  }}
-                  className={`min-h-40 rounded-[2rem] border p-5 sm:min-h-48 ${
-                    isOpen
-                      ? "border-white bg-white/70"
-                      : "border-white/70 bg-[#FFDDD2]/60"
-                  }`}
-                >
-                  {!isOpen ? (
-                    <>
-                      <Gift
-                        size={
-                          36
-                        }
-                        className="mx-auto text-[#E29578]"
-                      />
+            const rotations = [
+              "-rotate-2",
+              "rotate-2",
+              "-rotate-1",
+              "rotate-3",
+              "-rotate-3",
+              "rotate-1",
+            ];
 
-                      <p className="mt-4 text-xs font-bold uppercase tracking-widest">
-                        Open me
-                      </p>
-                    </>
-                  ) : (
+            return (
+              <motion.button
+                key={reason}
+                onClick={() => openReason(index)}
+                whileHover={{
+                  y: -10,
+                  rotate: 0,
+                  scale: 1.04,
+                }}
+                whileTap={{
+                  scale: 0.95,
+                }}
+                className={`relative min-h-48 overflow-hidden rounded-[1.5rem] border p-5 shadow-lg transition-all duration-500 sm:min-h-56 sm:p-6 ${
+                  rotations[index % rotations.length]
+                } ${
+                  isOpen
+                    ? "border-white bg-white shadow-2xl"
+                    : "border-white/70 bg-[#FFF4EF]"
+                }`}
+              >
+                {!isOpen ? (
+                  <>
+                    {/* Tape */}
+                    <div className="absolute left-1/2 top-0 h-8 w-20 -translate-x-1/2 -translate-y-3 rotate-[-3deg] bg-[#E29578]/25" />
+
                     <motion.div
+                      animate={{
+                        y: [0, -6, 0],
+                        rotate: [-3, 3, -3],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: index * 0.15,
+                      }}
+                      className="mt-5 text-5xl"
+                    >
+                      {emojis[index % emojis.length]}
+                    </motion.div>
+
+                    <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.25em] text-[#E29578]">
+                      Memory #{index + 1}
+                    </p>
+
+                    <motion.p
+                      animate={{
+                        opacity: [0.4, 0.8, 0.4],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                      }}
+                      className="mt-2 text-xs"
+                    >
+                      Tap to discover
+                    </motion.p>
+
+                    <motion.span
+                      animate={{
+                        rotate: [0, 20, 0],
+                        scale: [0.8, 1.2, 0.8],
+                        opacity: [0.3, 1, 0.3],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: index * 0.2,
+                      }}
+                      className="absolute right-4 top-5 text-lg text-[#E29578]"
+                    >
+                      ✦
+                    </motion.span>
+                  </>
+                ) : (
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      scale: 0.5,
+                      rotate: -8,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      rotate: 0,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      type: "spring",
+                      stiffness: 180,
+                    }}
+                    className="flex h-full min-h-40 flex-col items-center justify-center sm:min-h-44"
+                  >
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{
+                        scale: [0, 1.25, 1],
+                      }}
+                      transition={{
+                        duration: 0.6,
+                      }}
+                      className="text-3xl"
+                    >
+                      ♥
+                    </motion.div>
+
+                    <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#E29578]">
+                      One little reason
+                    </p>
+
+                    <motion.p
                       initial={{
                         opacity: 0,
-                        scale: 0.8,
+                        y: 10,
                       }}
                       animate={{
                         opacity: 1,
-                        scale: 1,
+                        y: 0,
                       }}
+                      transition={{
+                        delay: 0.2,
+                      }}
+                      className="mt-3 text-sm font-semibold leading-6"
                     >
-                      <Sparkles className="mx-auto text-[#E29578]" />
+                      {reason}
+                    </motion.p>
 
-                      <p className="mt-3 text-xs font-bold uppercase tracking-widest text-[#E29578]">
-                        Reason #
-                        {index +
-                          1}
-                      </p>
+                    <motion.span
+                      animate={{
+                        y: [0, -12, 0],
+                        opacity: [0.2, 1, 0.2],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                      }}
+                      className="absolute left-4 top-5 text-[#E29578]"
+                    >
+                      ✦
+                    </motion.span>
 
-                      <p className="mt-3 text-sm font-semibold leading-6">
-                        {
-                          reason
-                        }
-                      </p>
-                    </motion.div>
-                  )}
-                </motion.button>
-              );
-            }
-          )}
+                    <motion.span
+                      animate={{
+                        y: [0, -10, 0],
+                        opacity: [0.2, 1, 0.2],
+                      }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        delay: 0.5,
+                      }}
+                      className="absolute bottom-5 right-5 text-[#E29578]"
+                    >
+                      ♡
+                    </motion.span>
+                  </motion.div>
+                )}
+              </motion.button>
+            );
+          })}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="mx-auto mt-8 max-w-xs"
+        >
+          <div className="mb-2 flex justify-between text-[10px] uppercase tracking-widest opacity-50">
+            <span>Our little memories</span>
+
+            <span>
+              {opened.length}/{reasons.length}
+            </span>
+          </div>
+
+          <div className="h-1.5 overflow-hidden rounded-full bg-[#E29578]/15">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{
+                width: `${(opened.length / reasons.length) * 100}%`,
+              }}
+              transition={{
+                duration: 0.5,
+              }}
+              className="h-full rounded-full bg-[#E29578]"
+            />
+          </div>
+
+          {opened.length === reasons.length && (
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 10,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              className="mt-4 text-sm font-semibold text-[#E29578]"
+            >
+              You found them all… but I could never list them all. ♥
+            </motion.p>
+          )}
+        </motion.div>
       </div>
     </Scene>
   );
