@@ -779,7 +779,7 @@ function Letter() {
                 }}
                 className="mb-5 text-4xl text-[#E29578]"
               >
-                ❦
+                ❤️
               </motion.div>
 
               <motion.p
@@ -807,10 +807,22 @@ function Letter() {
                 transition={{ delay: 0.8, duration: 0.7 }}
                 className="mx-auto mt-7 max-w-xl text-sm leading-7 opacity-65 sm:text-base"
               >
-                You have a way of making ordinary days
-                softer, happier and worth remembering.
-                This little story is only a tiny reminder
-                of how special you are.
+                Jiya,
+
+I know main perfect nahi hoon, aur shayad kabhi bhi nahi tha. Lekin maine hamesha apni taraf se try kiya hai ki main tumhare liye better banu, tumhe samjhu aur tumhare liye apna best du.
+
+Jo bhi hua, woh galti thi. Aur main jaanta hoon ki jo kuch hua usse bhoolna itna easy nahi hai. Shayad kuch cheezein hum kabhi completely bhool bhi nahi paayenge… but Jiya, humein aage toh badhna hai na? Kyunki agar hum wahi sab apne present mein lekar chalenge, toh humara aaj bhi kharab hota rahega.
+
+Aur sach kahu, jab se tum yahan se gayi ho, maine dekha hai ki tum khud ko khush rakhne ki try kar rahi ho. Tumhe aise khush dekhkar mujhe sach mein bahut achha lagta hai.
+
+Bas… tum aise hi rehna. Khush rehna, smile karna aur apni life ko enjoy karna.
+
+Aur ek baat hamesha yaad rakhna—
+
+Main hamesha tumhare saath hoon, Jiya. Hamesha.
+
+I love you, Jiya. ❤️
+
               </motion.p>
 
               <motion.p
@@ -2242,17 +2254,18 @@ function Finale({ restart }) {
   const [wished, setWished] = useState(false);
   const [blowing, setBlowing] = useState(false);
   const [kisses, setKisses] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
 
   const makeWish = () => {
     if (wished || blowing) return;
 
     setBlowing(true);
 
-    // Hidden 4 second countdown
+    // 2 second timer
     setTimeout(() => {
       setBlowing(false);
       setWished(true);
-    }, 4000);
+    }, 2000);
   };
 
   return (
@@ -2342,6 +2355,7 @@ function Finale({ restart }) {
             <span className="text-[#FFD7C9]">My Love ♥</span>
           </motion.h1>
 
+          {/* Subtitle */}
           <motion.p
             initial={{
               opacity: 0,
@@ -2359,194 +2373,192 @@ function Finale({ restart }) {
             And this is only one chapter of our story...
           </motion.p>
 
-         
+          {/* ========================= */}
           {/* Birthday Cake */}
-          
-<motion.div
-  initial={{
-    opacity: 0,
-    y: 30,
-    scale: 0.9,
-  }}
-  animate={{
-    opacity: 1,
-    y: 0,
-    scale: 1,
-  }}
-  transition={{
-    delay: 1,
-  }}
-  className="mx-auto mt-8 max-w-md rounded-[2rem] border border-white/10 bg-white/[0.07] p-7 shadow-2xl backdrop-blur-xl"
->
-  {/* Cake with candles */}
-  <motion.div
-    animate={
-      blowing
-        ? {
-            x: [-3, 3, -3, 3, 0],
-            rotate: [-1, 1, -1, 1, 0],
-          }
-        : {
-            y: [0, -5, 0],
-          }
-    }
-    transition={
-      blowing
-        ? {
-            duration: 0.25,
-            repeat: 5,
-          }
-        : {
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }
-    }
-    className="relative mx-auto w-fit text-8xl"
-  >
-    🎂
+          {/* ========================= */}
 
-    {/* Blow air */}
-    {blowing && (
-      <motion.div
-        initial={{
-          opacity: 0,
-          x: -10,
-        }}
-        animate={{
-          opacity: [0, 0.8, 0],
-          x: [-5, 25],
-        }}
-        transition={{
-          duration: 0.5,
-          repeat: 3,
-        }}
-        className="absolute left-[-25px] top-5 text-2xl text-white/50"
-      >
-        ~~~
-      </motion.div>
-    )}
-
-    {/* Candle flame effect over cake */}
-    {!wished && (
-      <motion.div
-        animate={
-          blowing
-            ? {
-                opacity: [1, 0.8, 0],
-                scale: [1, 1.3, 0],
-                y: [0, -10, -20],
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30,
+              scale: 0.9,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            transition={{
+              delay: 1,
+            }}
+            className="mx-auto mt-8 max-w-md rounded-[2rem] border border-white/10 bg-white/[0.07] p-7 shadow-2xl backdrop-blur-xl"
+          >
+            {/* Cake */}
+            <motion.div
+              animate={
+                blowing
+                  ? {
+                      x: [-3, 3, -3, 3, 0],
+                      rotate: [-1, 1, -1, 1, 0],
+                    }
+                  : {
+                      y: [0, -5, 0],
+                    }
               }
-            : {
-                opacity: [0.7, 1, 0.7],
-                scale: [0.9, 1.1, 0.9],
-                y: [0, -2, 0],
+              transition={
+                blowing
+                  ? {
+                      duration: 0.25,
+                      repeat: 5,
+                    }
+                  : {
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }
               }
-        }
-        transition={
-          blowing
-            ? {
-                duration: 0.6,
-              }
-            : {
-                duration: 0.8,
-                repeat: Infinity,
-              }
-        }
-        className="pointer-events-none absolute left-1/2 top-[-2px] -translate-x-1/2 text-xl"
-      >
-        🔥
-      </motion.div>
-    )}
-  </motion.div>
+              className="relative mx-auto w-fit text-8xl"
+            >
+              🎂
 
-  <p className="mt-4 text-xs font-bold uppercase tracking-[0.25em] text-[#FFD7C9]">
-    {wished
-      ? "Your wish is on its way ✨"
-      : blowing
-      ? "Make your wish... ✨"
-      : "Make a wish"}
-  </p>
+              {/* Blow Air */}
+              {blowing && (
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    x: -10,
+                  }}
+                  animate={{
+                    opacity: [0, 0.8, 0],
+                    x: [-5, 25],
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    repeat: 3,
+                  }}
+                  className="absolute left-[-25px] top-5 text-2xl text-white/50"
+                >
+                  ~~~
+                </motion.div>
+              )}
 
-  {!wished && !blowing && (
-    <p className="mt-2 text-sm text-white/50">
-      Close your eyes and make a secret wish...
-    </p>
-  )}
+              {/* Flame on Cake */}
+              {!wished && (
+                <motion.div
+                  animate={
+                    blowing
+                      ? {
+                          opacity: [1, 0.8, 0],
+                          scale: [1, 1.3, 0],
+                          y: [0, -10, -20],
+                        }
+                      : {
+                          opacity: [0.7, 1, 0.7],
+                          scale: [0.9, 1.1, 0.9],
+                          y: [0, -2, 0],
+                        }
+                  }
+                  transition={
+                    blowing
+                      ? {
+                          duration: 0.6,
+                        }
+                      : {
+                          duration: 0.8,
+                          repeat: Infinity,
+                        }
+                  }
+                  className="pointer-events-none absolute left-1/2 top-[-2px] -translate-x-1/2 text-xl"
+                >
+                  🔥
+                </motion.div>
+              )}
+            </motion.div>
 
-  {/* Hidden 2 second timer */}
-  {blowing && (
-    <motion.p
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      className="mt-4 text-xs text-white/40"
-    >
-      Make your wish...
-    </motion.p>
-  )}
+            {/* Cake Text */}
+            <p className="mt-4 text-xs font-bold uppercase tracking-[0.25em] text-[#FFD7C9]">
+              {wished
+                ? "Your wish is on its way ✨"
+                : blowing
+                ? "Make your wish... ✨"
+                : "Make a wish"}
+            </p>
 
-  {/* Make Wish Button */}
-  {!wished && !blowing && (
-    <motion.button
-      whileHover={{
-        scale: 1.05,
-      }}
-      whileTap={{
-        scale: 0.95,
-      }}
-      onClick={() => {
-        setBlowing(true);
+            {!wished && !blowing && (
+              <p className="mt-2 text-sm text-white/50">
+                Close your eyes and make a secret wish...
+              </p>
+            )}
 
-        setTimeout(() => {
-          setBlowing(false);
-          setWished(true);
-        }, 2000);
-      }}
-      className="mt-5 rounded-full bg-[#E29578] px-8 py-3 text-sm font-bold text-white shadow-lg shadow-[#E29578]/20"
-    >
-      Make a Wish ✨
-    </motion.button>
-  )}
+            {/* 2 Second Timer */}
+            {blowing && (
+              <motion.p
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                className="mt-4 text-xs text-white/40"
+              >
+                Make your wish...
+              </motion.p>
+            )}
 
-  {/* Wish completed */}
-  {wished && (
-    <motion.div
-      initial={{
-        opacity: 0,
-        scale: 0.7,
-      }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 180,
-      }}
-      className="mt-5"
-    >
-      <div className="flex justify-center gap-2 text-2xl">
-        ✨ 🌙 ✨
-      </div>
+            {/* Make Wish Button */}
+            {!wished && !blowing && (
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{
+                  scale: 0.95,
+                }}
+                onClick={makeWish}
+                className="mt-5 rounded-full bg-[#E29578] px-8 py-3 text-sm font-bold text-white shadow-lg shadow-[#E29578]/20"
+              >
+                Make a Wish ✨
+              </motion.button>
+            )}
 
-      <p className="story-title mt-3 text-xl text-[#FFE7DE]">
-        Wish sent to the stars ♥
-      </p>
+            {/* Wish Completed */}
+            {wished && (
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.7,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 180,
+                }}
+                className="mt-5"
+              >
+                <div className="flex justify-center gap-2 text-2xl">
+                  ✨ 🌙 ✨
+                </div>
 
-      <p className="mt-2 text-xs leading-6 text-white/50">
-        I hope every little dream of yours
-        <br />
-        finds its way to you.
-      </p>
-    </motion.div>
-  )}
-</motion.div>
+                <p className="story-title mt-3 text-xl text-[#FFE7DE]">
+                  Wish sent to the stars ♥
+                </p>
 
+                <p className="mt-2 text-xs leading-6 text-white/50">
+                  I hope every little dream of yours
+                  <br />
+                  finds its way to you.
+                </p>
+              </motion.div>
+            )}
+          </motion.div>
+
+          {/* ========================= */}
           {/* Final Message */}
+          {/* ========================= */}
+
           <motion.div
             initial={{
               opacity: 0,
@@ -2573,7 +2585,10 @@ function Finale({ restart }) {
             </p>
           </motion.div>
 
-          {/* Buttons */}
+          {/* ========================= */}
+          {/* Birthday Video Reveal */}
+          {/* ========================= */}
+
           <motion.div
             initial={{
               opacity: 0,
@@ -2586,8 +2601,152 @@ function Finale({ restart }) {
             transition={{
               delay: 1.7,
             }}
+            className="mx-auto mt-8 max-w-lg"
+          >
+            {!showVideo ? (
+              <motion.button
+                whileHover={{
+                  scale: 1.03,
+                  y: -3,
+                }}
+                whileTap={{
+                  scale: 0.96,
+                }}
+                onClick={() => setShowVideo(true)}
+                className="group relative w-full overflow-hidden rounded-3xl border border-[#FFD7C9]/20 bg-white/[0.07] px-6 py-7 shadow-2xl backdrop-blur-xl"
+              >
+                {/* Glow */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-[#FFD7C9]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                <div className="relative">
+                  <motion.div
+                    animate={{
+                      y: [0, -5, 0],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="text-5xl"
+                  >
+                    🎥
+                  </motion.div>
+
+                  <p className="mt-4 text-base font-bold text-[#FFD7C9]">
+                    Jiya, ek last thing tumhare liye...
+                  </p>
+
+                  <p className="mt-2 text-sm text-white/50">
+                    I made something special for your birthday ♥
+                  </p>
+
+                  <div className="mx-auto mt-5 flex w-fit items-center gap-2 rounded-full bg-[#E29578] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#E29578]/20">
+                    ▶ Watch My Birthday Wish
+                  </div>
+                </div>
+              </motion.button>
+            ) : (
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.92,
+                  y: 20,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 160,
+                  damping: 18,
+                }}
+                className="overflow-hidden rounded-3xl border border-[#FFD7C9]/20 bg-white/[0.07] p-4 shadow-2xl backdrop-blur-xl"
+              >
+                {/* Video Heading */}
+                <div className="mb-4 px-2 pt-2">
+                  <div className="text-3xl">🎂</div>
+
+                  <p className="story-title mt-2 text-xl text-[#FFE7DE]">
+                    Happy Birthday, Jiya ♥
+                  </p>
+
+                  <p className="mt-1 text-xs text-white/40">
+                    This little wish is just for you.
+                  </p>
+                </div>
+
+                {/* Video */}
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-xl">
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="h-auto max-h-[70vh] w-full object-contain"
+                  >
+                    <source
+                      src="/video/happy-birthday.mp4"
+                      type="video/mp4"
+                    />
+
+                    Your browser does not support the video element.
+                  </video>
+                </div>
+
+                {/* Video Bottom Message */}
+                <motion.p
+                  initial={{
+                    opacity: 0,
+                  }}
+                  animate={{
+                    opacity: 1,
+                  }}
+                  transition={{
+                    delay: 0.5,
+                  }}
+                  className="mt-4 text-sm leading-6 text-white/50"
+                >
+                  I hope this little surprise makes you smile. ♥
+                </motion.p>
+
+                {/* Hide Video */}
+                <motion.button
+                  whileHover={{
+                    scale: 1.03,
+                  }}
+                  whileTap={{
+                    scale: 0.95,
+                  }}
+                  onClick={() => setShowVideo(false)}
+                  className="mt-4 text-xs text-white/30 transition hover:text-white/60"
+                >
+                  Hide video
+                </motion.button>
+              </motion.div>
+            )}
+          </motion.div>
+
+          {/* ========================= */}
+          {/* Buttons */}
+          {/* ========================= */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 2,
+            }}
             className="mt-9 flex flex-col justify-center gap-3 sm:flex-row"
           >
+            {/* Replay */}
             <motion.button
               whileHover={{
                 y: -3,
@@ -2601,6 +2760,7 @@ function Finale({ restart }) {
               ↻ Replay Our Story
             </motion.button>
 
+            {/* Kiss */}
             <motion.button
               whileHover={{
                 scale: 1.04,
@@ -2615,7 +2775,10 @@ function Finale({ restart }) {
             </motion.button>
           </motion.div>
 
-          {/* Kiss animation */}
+          {/* ========================= */}
+          {/* Kiss Animation */}
+          {/* ========================= */}
+
           {kisses > 0 && (
             <motion.div
               key={kisses}
@@ -2656,7 +2819,10 @@ function Finale({ restart }) {
             </motion.div>
           )}
 
+          {/* ========================= */}
           {/* Ending */}
+          {/* ========================= */}
+
           <motion.div
             initial={{
               opacity: 0,
@@ -2665,7 +2831,7 @@ function Finale({ restart }) {
               opacity: 1,
             }}
             transition={{
-              delay: 2.2,
+              delay: 2.3,
             }}
             className="mt-12"
           >
