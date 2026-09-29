@@ -1001,7 +1001,7 @@ function Timeline() {
     key={memories[active].image}
     src={memories[active].image}
     alt={memories[active].title}
-    className="aspect-video w-full object-cover"
+    className="aspect-video h-full object-cover"
     initial={{
       opacity: 0,
       scale: 1.06,
@@ -2680,20 +2680,21 @@ function Finale({ restart }) {
 
                 {/* Video */}
                 <div className="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-xl">
-                  <video
-                    controls
-                    playsInline
-                    preload="metadata"
-                    className="h-auto max-h-[70vh] w-full object-contain"
-                  >
-                    <source
-                      src="/video/happy-birthday.mp4"
-                      type="video/mp4"
-                    />
-
-                    Your browser does not support the video element.
-                  </video>
-                </div>
+  <div className="aspect-video w-full">
+    <video
+      controls
+      playsInline
+      preload="metadata"
+      className="h-full w-full object-contain"
+    >
+      <source
+        src="/video/happy-birthday.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video element.
+    </video>
+  </div>
+</div>
 
                 {/* Video Bottom Message */}
                 <motion.p
